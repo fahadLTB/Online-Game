@@ -15,7 +15,7 @@ GAME_HTML = r"""
   <style>
     html, body { height: 100%; margin: 0; background: #0b1220; }
     #game { width: 100%; height: 100%; display: block; }
-    .hud { position: absolute; left: 12px; top: 80px; z-index: 10; color: white; font-family: Inter, Roboto, sans-serif;}
+    .hud { position: absolute; left: 12px; top: 10px; z-index: 10; color: white; font-family: Inter, Roboto, sans-serif;}
     .hud .item { margin-bottom: 6px; background: rgba(0,0,0,0.45); padding: 8px 12px; border-radius: 10px; }
     .levelBadge { font-weight: 700; }
     /* remove selection and gestures while playing */
@@ -23,7 +23,7 @@ GAME_HTML = r"""
   </style>
 </head>
 <body>
-  <canvas id="game" style="touch-action:none; margin-top:80px;"></canvas>
+  <canvas id="game" style=\"touch-action:none; margin-top:120px;\"></canvas>
   <div class="hud">
     <div class="item" id="level">LEVEL 1</div>
     <div class="item" id="strokes">STROKES: 0</div>
@@ -382,7 +382,7 @@ GAME_HTML = r"""
     }
     // only allow drag if click is near the ball or ball is stopped
     const d = Math.hypot(p.x - ball.x, p.y - ball.y);
-    if (d < 80 && (ball.vx === 0 && ball.vy === 0 || d < BALL_RADIUS+12)) {
+    if (true) {
       isDragging = true;
       dragStart = {x: ball.x, y: ball.y};
       dragPos = p;
